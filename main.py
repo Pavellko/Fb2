@@ -2,7 +2,6 @@ import lxml.etree as et
 import re
 import pyttsx3
 
-
 fname = 'Я весь внутри плачу.fb2'
 
 with open(fname, 'rb') as f:
@@ -18,7 +17,6 @@ for bin_ed in tree.xpath('//ns:description', namespaces=ns):
 cleart = et.tounicode(tree)
 cleart = re.sub(r'\<[^>]*\>', '', cleart)
 
-
 engine = pyttsx3.init()
 voice = engine.getProperty('voices')
 zx={}
@@ -27,7 +25,7 @@ for i in voice:
     
 print(zx.items())
 
-engine.setProperty('voice', zx['Microsoft Irina Desktop - Russian'])
+engine.setProperty('voice', zx['Tatiana'])
 
 engine.say(cleart)
 engine.runAndWait()
